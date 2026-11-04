@@ -11,15 +11,15 @@
   background: var(--surface);
   border-radius: var(--radius);
   overflow: hidden;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .movie-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(248, 199, 9, 0.25);
 }
 
-.movie-card img,
-.no-poster {
+.movie-card img {
   display: block;
   width: 100%;
   aspect-ratio: 2 / 3;
@@ -27,29 +27,14 @@
   background: var(--surface-2);
 }
 
-.no-poster {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-}
-
 .movie-detail {
   padding: 12px;
 }
 
-.movie-detail h3 {
+.movie-detail h2 {
   margin: 0;
   font-size: 1rem;
+  font-weight: 600;
   color: var(--text);
-}
-
-.status {
-  text-align: center;
-  margin: 40px 0;
-  color: var(--text-muted);
-}
-
-.status.error {
-  color: #ff6b6b;
+  line-height: 1.3;
 }

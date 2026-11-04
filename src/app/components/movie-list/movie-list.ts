@@ -1,27 +1,24 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, inject } from '@angular/core';
 import { MovieService } from '../../service/movie-service';
 
 @Component({
-  imports: [],
   selector: 'app-movie-list',
-  styleUrl: './movie-list.css',
+  standalone: true,
+  imports: [],
   templateUrl: './movie-list.html',
+  styleUrl: './movie-list.css'
 })
 export class MovieList implements OnInit {
-  protected readonly movieService = inject(MovieService);
-  protected readonly loading = signal(true);
-  protected readonly error = signal('');
-  protected readonly imageBase = 'https://image.tmdb.org/t/p/w500';
+
+  movieService = inject(MovieService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.movieService.getMovieList().subscribe({
-      next: (movies) => {
-        this.movieService.movieList.set(movies);
-        this.loading.set(false);
-      },
-      error: (err) => {
-        this.error.set(`Erreur API : ${err.status} - ${err.message}`);
-        this.loading.set(false);
+      next: (response) => {
+        this.movieService.movieList = response;
+        this.cdr.markForCheck();
+        console.log('Movies loaded:', response);
       },
     });
   }
