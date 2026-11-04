@@ -18,12 +18,20 @@
   transform: translateY(-4px);
 }
 
-.movie-card img {
+.movie-card img,
+.no-poster {
   display: block;
   width: 100%;
   aspect-ratio: 2 / 3;
   object-fit: cover;
   background: var(--surface-2);
+}
+
+.no-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
 }
 
 .movie-detail {
@@ -34,4 +42,14 @@
   margin: 0;
   font-size: 1rem;
   color: var(--text);
+}
+
+.status {
+  text-align: center;
+  margin: 40px 0;
+  color: var(--text-muted);
+}
+
+.status.error {
+  color: #ff6b6b;
 }

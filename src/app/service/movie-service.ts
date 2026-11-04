@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { Movie } from '../interfaces/movie';
@@ -12,11 +12,11 @@ export class MovieService {
   private readonly http = inject(HttpClient);
   private readonly url = environment.url_api;
   private readonly key = environment.api_key;
-  public movieList: Movie[] = [];
+  public readonly movieList = signal<Movie[]>([]);
 
   getMovieList(): Observable<Movie[]> {
     return this.http
-      .get<MovieResponse>(`${this.url}?api_key=${this.key}`)
+      .get<MovieResponse>(`${this.url}now_playing?api_key=${this.key}`)
       .pipe(map((response) => response.results));
   }
 }
