@@ -1,0 +1,51 @@
+.container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 32px;
+    background: linear-gradient(90deg, var(--yellow) 0%, #ffdd57 100%);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-title);
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: #14101c;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 999px;
+    background-color: var(--purple);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--purple-light);
+    transform: translateY(-2px);
+}
+
+button fa-icon {
+    color: #ff6b81;
+}
+
