@@ -1,0 +1,136 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+/* Affiche */
+.poster-container {
+    width: 30%;
+    min-width: 240px;
+}
+
+.poster-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Bloc d'informations */
+.details-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    flex: 1;
+    min-width: 300px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--surface-2);
+    border-radius: var(--radius);
+    color: var(--text);
+}
+
+.title {
+    width: 100%;
+    margin: 0 0 8px;
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+    color: var(--yellow);
+}
+
+/* Cartes d'infos */
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 30%;
+    min-width: 140px;
+    padding: 12px;
+    background: var(--surface-2);
+    border-radius: var(--radius);
+    border-bottom: 3px solid var(--purple);
+}
+
+h3 {
+    margin: 0 0 4px;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--yellow);
+}
+
+p {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text);
+    text-align: center;
+}
+
+/* Synopsis */
+.overview-container {
+    width: 100%;
+    padding: 16px;
+    background: var(--surface-2);
+    border-left: 4px solid var(--yellow);
+    border-radius: var(--radius);
+}
+
+.overview-container p.detail {
+    text-align: justify;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+/* Boutons */
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 8px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--yellow);
+    color: #000;
+}
+
+.btn-primary:hover {
+    background: var(--yellow-dark);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: var(--purple);
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background: var(--purple-light);
+    transform: translateY(-2px);
+}
+
